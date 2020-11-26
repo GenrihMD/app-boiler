@@ -1,4 +1,5 @@
 *~
 *.swp
 .DS_Store
-app/dist
+dist
+node_modules
