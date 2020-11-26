@@ -6,7 +6,7 @@ import (
 )
 
 func hello(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintf(w, "Hello, you've requested: %s\n", r.URL.Path)
+	fmt.Fprintf(w, "Hi, you've requested: %s\n", r.URL.Path)
 }
 
 func handleRequests() {
