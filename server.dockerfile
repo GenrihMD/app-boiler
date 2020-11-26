@@ -9,15 +9,11 @@ ENV POSTGRES_USER $POSTGRES_USER
 ENV POSTGRES_PASSWORD $POSTGRES_PASSWORD
 ENV POSTGRES_PORT $POSTGRES_PORT
 
-WORKDIR /go/app
-COPY ./api /go/app
+WORKDIR /app
 
-RUN apk --no-cache update \
-    && apk add --no-cache git tzdata \
-    && cp /usr/share/zoneinfo/Asia/Tokyo /etc/localtime \
-    && apk del tzdata \
-    && rm -rf /var/cache/apk/* \
-    && go get gopkg.in/urfave/cli.v2@master \
-    && go get github.com/oxequa/realize
+COPY ./server /app
 
-CMD realize start
+RUN go mod download
+RUN go get github.com/githubnemo/CompileDaemon
+
+ENTRYPOINT CompileDaemon --build="go build -o app" --command=./app
