@@ -6,4 +6,4 @@ COPY ./client /app
 RUN apk --no-cache update \
     && apk add curl
 
-# CMD sh ./entry-point.sh
+CMD /app/entrypoint.sh

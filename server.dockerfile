@@ -13,7 +13,6 @@ WORKDIR /app
 
 COPY ./server /app
 
-RUN go mod download
-RUN go get github.com/githubnemo/CompileDaemon
+RUN go mod download && go get github.com/githubnemo/CompileDaemon
 
 ENTRYPOINT CompileDaemon --build="go build -o app" --command=./app
