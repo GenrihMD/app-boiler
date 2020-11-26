@@ -26,7 +26,7 @@ services:
       - db
     tty: true
     volumes:
-      - ./server:/go/app
+      - ./server:/app
 
   db:
     container_name: db
