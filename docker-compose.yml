@@ -50,4 +50,4 @@ services:
     depends_on:
       - client
     volumes:
-      - ./proxy:/app
+      - ./proxy:/etc/nginx/conf.d/
