@@ -51,3 +51,11 @@ services:
       - client
     volumes:
       - ./proxy:/etc/nginx/conf.d/
+
+  faker:
+        container_name: proxy
+    build:
+      context: .
+      dockerfile: faker.dockerfile
+    ports:
+      - $FAKER_PORT:$FAKER_PORT
