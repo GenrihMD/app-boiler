@@ -15,7 +15,10 @@ func (r *mutationResolver) CreateProduct(ctx context.Context, input model.NewPro
 }
 
 func (r *queryResolver) Products(ctx context.Context) ([]*model.Product, error) {
-	panic(fmt.Errorf("not implemented"))
+	products := []*model.Product{ 
+		&model.Product{ "1", "Toot" }, 
+		&model.Product{ "1", "File" } }
+	return products, nil
 }
 
 // Mutation returns generated.MutationResolver implementation.
