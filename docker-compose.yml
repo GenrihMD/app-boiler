@@ -53,7 +53,7 @@ services:
       - ./proxy:/etc/nginx/conf.d/
 
   faker:
-        container_name: proxy
+    container_name: faker
     build:
       context: .
       dockerfile: faker.dockerfile
