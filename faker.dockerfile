@@ -1,6 +1,6 @@
 FROM node:14.3.0-alpine
 
-ENTRYPOINT ["node", "/usr/local/bin/graphql-faker"]
+ENTRYPOINT ["node", "/usr/local/bin/graphql-faker", "/workdir/schema.graphqls"]
 WORKDIR /workdir
 
 EXPOSE 9002
