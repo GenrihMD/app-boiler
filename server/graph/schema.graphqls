@@ -1,10 +1,8 @@
 type Product {
   id: ID!
-  name: String!
-}
-
-type Query {
-  products: [Product!]!
+  name: String! @fake(type: product)
+  price: Float @fake(type: money)
+  material: String @fake(type: productMaterial)
 }
 
 input NewProduct {
@@ -14,4 +12,9 @@ input NewProduct {
 
 type Mutation {
   createProduct(input: NewProduct!): Product!
+}
+
+type Query {
+  products: [Product!]!
+  product(id: ID): Product
 }
