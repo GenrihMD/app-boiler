@@ -59,3 +59,5 @@ services:
       dockerfile: faker.dockerfile
     ports:
       - $FAKER_PORT:$FAKER_PORT
+    volumes:
+      - ./server/graph:/workdir
