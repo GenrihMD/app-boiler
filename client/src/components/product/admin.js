@@ -1,5 +1,5 @@
-import { CustomAdmin } from '@/components/utils/customAdmin'
-import { ProductForm } from '@/components/product/forms'
+import { PrimusAdmin } from 'primusfront'
+import { ProductForm } from './form'
 
 export class ProductAdmin extends CustomAdmin {
   constructor () {
